@@ -17,8 +17,8 @@ if [ -z "$DEPLOYBOT_SUBDOMAIN" ]; then
 fi
 
 # Check if Environment ID is set.
-if [ -z "$ENVIRONMENT_ID" ]; then
-  echo "ENVIRONMENT_ID is not set. Quitting."
+if [ -z "$DEPLOYBOT_ENVIRONMENT_ID" ]; then
+  echo "DEPLOYBOT_ENVIRONMENT_ID is not set. Quitting."
   exit 1
 fi
 
@@ -34,7 +34,7 @@ if [ -z "$TRIGGER_NOTIFICATIONS" ]; then
   TRIGGER_NOTIFICATIONS='true'
 fi
 
-set -- --data '{"environment_id":'"${PURGE_URLS}"',"deploy_from_scratch":'"${DEPLOY_FROM_SCRATCH}"',"trigger_notifications":'"${TRIGGER_NOTIFICATIONS}"',"comment":"Deploy via Github Action"}'
+set -- --data '{"environment_id":'"${DEPLOYBOT_ENVIRONMENT_ID}"',"deploy_from_scratch":'"${DEPLOY_FROM_SCRATCH}"',"trigger_notifications":'"${TRIGGER_NOTIFICATIONS}"',"comment":"Deploy via Github Action"}'
 
 ######## Call the API and store the response for later. ########
 # API docs: https://deploybot.com/api/deployments#trigger-deployment

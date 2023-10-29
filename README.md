@@ -9,13 +9,13 @@ All sensitive variables should be [set as encrypted secrets](https://help.github
 
 ### Configuration Variables
 
-| Key                     | Value                                                                                                                                                                                                                         | Suggested Type | Required |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------------- |
-| `DEPLOYBOT_SUBDOMAIN`   | **Required.** Your DeployBot subdomain. For example, if your url is `https://cocacola.deploybot.com`, then it's `cocacola`.                                                                                                   | `secret` | **Yes** |
-| `DEPLOYBOT_API_TOKEN`   | **Required.** The Api Token that will be used for authentication, which can be found in the right sidebar of your domain's overview page on the DeployBot dashboard. For example, `a74b8262ebae565e7572b37a94b11e27decadf05`. | `secret` | **Yes** |
-| `ENVIRONMENT_ID`        | **Required.** The DeployBot Environment ID in which the deployment will be triggered. For example, `1`.                                                                                                                       | `secret` | **Yes** |
-| `DEPLOY_FROM_SCRATCH`   | **Optional.** Specifies if the deployment should be done from scratch or not. By default it's false.                                                                                                                          | `env` | No |
-| `TRIGGER_NOTIFICATIONS` | **Optional.** Specifies if the deployment should trigger notifications or not. By default it's true.                                                                                                                          | `env` | No |
+| Key                        | Value                                                                                                                                                                                                                         | Suggested Type | Required |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------------- |
+| `DEPLOYBOT_SUBDOMAIN`      | **Required.** Your DeployBot subdomain. For example, if your url is `https://cocacola.deploybot.com`, then it's `cocacola`.                                                                                                   | `secret` | **Yes** |
+| `DEPLOYBOT_API_TOKEN`      | **Required.** The Api Token that will be used for authentication, which can be found in the right sidebar of your domain's overview page on the DeployBot dashboard. For example, `a74b8262ebae565e7572b37a94b11e27decadf05`. | `secret` | **Yes** |
+| `DEPLOYBOT_ENVIRONMENT_ID` | **Required.** The DeployBot Environment ID in which the deployment will be triggered. For example, `1`.                                                                                                                       | `secret` | **Yes** |
+| `DEPLOY_FROM_SCRATCH`      | **Optional.** Specifies if the deployment should be done from scratch or not. By default it's false.                                                                                                                          | `env` | No |
+| `TRIGGER_NOTIFICATIONS`    | **Optional.** Specifies if the deployment should trigger notifications or not. By default it's true.                                                                                                                          | `env` | No |
 
 
 ### `workflow.yml` Example
@@ -36,9 +36,9 @@ jobs:
       uses: facundofarias/deploybot-action@main
       env:
         # All these values should be set as encrypted secrets in your repository settings
-        DEPLOYBOT_SUBDOMAIN: ${{ secrets.CLOUDFLARE_ZONE }}
-        DEPLOYBOT_API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
-        ENVIRONMENT_ID: ${{ secrets.DEPLOYBOT_ENVIRONMENT_ID }}
+        DEPLOYBOT_SUBDOMAIN: ${{ secrets.DEPLOYBOT_SUBDOMAIN }}
+        DEPLOYBOT_API_TOKEN: ${{ secrets.DEPLOYBOT_API_TOKEN }}
+        DEPLOYBOT_ENVIRONMENT_ID: ${{ secrets.DEPLOYBOT_ENVIRONMENT_ID }}
 ```
 
 ## License
