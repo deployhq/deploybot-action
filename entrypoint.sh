@@ -24,13 +24,13 @@ fi
 
 # Check if Deploy From Scratch is set.
 if [ -z "$DEPLOY_FROM_SCRATCH" ]; then
-  echo "$DEPLOY_FROM_SCRATCH is not set. Setting to false."
+  echo "DEPLOY_FROM_SCRATCH is not set. Setting to false."
   DEPLOY_FROM_SCRATCH='false'
 fi
 
 # Check if Trigger Notifications is set.
 if [ -z "$TRIGGER_NOTIFICATIONS" ]; then
-  echo "$TRIGGER_NOTIFICATIONS is not set. Setting to true."
+  echo "TRIGGER_NOTIFICATIONS is not set. Setting to true."
   TRIGGER_NOTIFICATIONS='true'
 fi
 
