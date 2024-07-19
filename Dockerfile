@@ -6,7 +6,7 @@ LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="purple"
 
 LABEL version="0.0.1"
-LABEL repository="https://github.com/facundofarias/deploybot-action"
+LABEL repository="https://github.com/deployhq/deploybot-action"
 LABEL homepage="https://www.deploybot.com/"
 LABEL maintainer="Support DeployBot <support@deploybot.com>"
 
